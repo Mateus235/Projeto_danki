@@ -152,6 +152,28 @@ section.banner-container input[type=submit] {
     font-size: 22px;
     border: 0;
 }
+.bullets{
+    position: absolute;
+    z-index: 5;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+.bullets span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+    margin: 0 5px;
+
+}
+.bullets span.active-slider {
+    background-color: #00C59E;
+}
 
 section.descricao-autor {
     padding: 40px 0;
