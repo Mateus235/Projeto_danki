@@ -38,6 +38,14 @@ $(function(){ //cifrao é a funcao do jquery
         }
       // fa fa times
     }) 
+    carregarDinamico();
+    function carregarDinamico(){
+      $('[realtime]').click(function(){
+        var pagina = $(this).attr('realtime'); // Pega o valor do atributo realtime
+        $('.container-principal').load(INCLUDE_PATH+'pages/' +pagina+' .php');
+        return false; // Impede o comportamento padrão do link
+      })
+    }
 
     
 })

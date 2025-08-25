@@ -13,8 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="palavra-chave,do,meu,site">
     <meta name="description" content="descrição do meu website">
+    <link rel="icon" href="<?php echo INCLUDE_PATH; ?>favicon.ico" type="images/x-icon" />
 </head>
 <body>
+<base base="<?php echo INCLUDE_PATH; ?>">
 
     <header>
         <div class="center">
@@ -24,7 +26,7 @@
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+                    <li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
             <nav class="mobile right">
@@ -35,12 +37,13 @@
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>sobre">Sobre</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+                    <li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
             <div class="clear"></div> <!-- clear -->
         </div> <!-- center -->
     </header>
+    <div class="container-principal">
     <?php
         $url = isset($_GET['url']) ? $_GET['url'] : 'home';
 
@@ -54,7 +57,7 @@
             include('pages/404.php');
         }
     ?>
-
+    </div> <!-- container-principal -->
     
     <footer <?php if(isset($pagina404) && $pagina404 == true ) echo 'class="fixed"'; ?>>
         <div class="center">
@@ -69,6 +72,7 @@
             { ?>
     <script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script>
        <?php  } ?>
+    <script src="<?php echo INCLUDE_PATH; ?>js/animacao.js"></script>
 </body>
 </html>
 
